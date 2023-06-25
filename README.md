@@ -56,7 +56,11 @@ Proje İş Akışı
 - Eğer sanal cüzdanda yeterli para varsa satın alma işlemi için place-order isteği atılır. Bu aşamada müşteri kupon girebilir ayrıca varsa daha önce kazandığı puanlar ödeme tutarından düşürülür.
 - Eğer kupon ve önceki siparişlerden kazanılan puan parası yeterli değilse kredi kartı bilgileri ve para miktarı ile addmoney-towallet isteği atılarak sanal cüzdana para ekleme işlemi gerçekleştirilir.
 - Müşteri ürün bilgisinde bulunan miktar kadar, sanal cüzdanından ödediği net miktar üzerinden puan kazanabilir ve sonraki sipariş bu puan para olarak kullanılır.
-  
+
+İstekler ve teslim kriterleri
+----------
+- Tüm istekler ve proje teslim kriterleri tamamlanmıştır.
+
 İletişim
 ----------
 Mail: b.b.kamac@gmail.com
