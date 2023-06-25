@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:WebAPI.Controllers.AdminAuthController.AdminRegister(Entities.Models.Requests.UserRegisterRequest)">
+            <summary>
+            Admin kayıt işlemi yapılır. (Yalnızca admin kullanıcı admin kayıt işlemini gerçekleştirebilir.)
+            </summary>
+            <remarks>
+            Example Value: { "email": "bekir@admin.com", "password": "12345", "firstName": "Bekir", "lastName": "Kamacı", "shippingAddress": "Ümraniye/İstanbul" }
+            </remarks>
+            <param name="userRegisterRequest">Admin kullanıcı kayıt modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminAuthController.Login(Entities.Models.Requests.UserLoginRequest)">
+            <summary>
+            Admin girişi işlemi yapılır.
+            </summary>
+            <remarks>
+            Example Value: { "email": "bekir@admin.com", "password": "12345" }
+            </remarks>
+            <param name="userLoginRequest">Admin kullanıcı giriş modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminAuthController.GetAll">
+            <summary>
+            Tüm kullanıcıları getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminAuthController.Update(Entities.Models.Requests.UserRequest)">
+            <summary>
+            Kullanıcı güncelleme işlemi yapılır
+            </summary>
+            <remarks>
+            Example Value:{ "id": 0, "firstName": "string", "lastName": "string", "shippingAddress": "string" }
+            </remarks>
+            <param name="userRequest">Kullanıcı güncelleme modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminAuthController.Delete(System.Int32)">
+            <summary>
+            Müşteri silme işlemi gerçekleştirilir.
+            </summary>
+            <param name="id">Silinecek kullanıcının Id değeri</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCategoriesController.Add(Entities.Models.Requests.CategoryRequest)">
+            <summary>
+            Yeni bir kategori ekler.
+            </summary>
+            <remarks>
+            Example Value: { "name": "Category 5", "description": "Description of Category 5"}
+            </remarks>
+            <param name="categoryRequest">Kategori ekleme modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCategoriesController.Update(Entities.Models.Requests.CategoryRequest,System.Int32)">
+            <summary>
+            Bir kategoriyi günceller.
+            </summary>
+            <remarks>
+            Example Value: { "name": "Category 5", "description": "Description of Category 5"} /categoryId = 1
+            </remarks>
+            <param name="categoryRequest">Kategori güncelleme modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCategoriesController.Delete(System.Int32)">
+            <summary>
+            Bir kategoriyi siler.
+            </summary>
+            <param name="categoryId">Silinecek kategorinin Id değeri</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCouponsController.GenerateCoupon(Entities.Models.Requests.CouponRequest)">
+            <summary>
+            Yeni bir kupon oluşturur.
+            </summary>
+            <remarks>
+            Example Value: { "couponCount": 10, "discountAmount": 30, "validDays": 15 }  > 15 gün geçerli 30 TL'lik 10 tane kupon oluşturur.
+            </remarks>
+            <param name="couponRequest">Kupon oluşturma modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCouponsController.GetAllActiveCoupons">
+            <summary>
+            Aktif tüm kuponları getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCouponsController.GetCouponByCode(System.String)">
+            <summary>
+            Kupon kodu ile veri tabanından kupon kontrolü yapılır
+            </summary>
+            <remarks>
+            Example Value: code = AEF00434F5
+            </remarks>
+            <param name="code">Sorgulanmak istenen kupon kodu</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCouponsController.IsCouponValid(System.String)">
+            <summary>
+            Belirtilen kupon kodunun geçerli olup olmadığını kontrol eder.
+            </summary>
+            <remarks>
+            Example Value: code = AEF00434F5
+            </remarks>
+            <param name="code">Sorgulanmak istenen kupon kodu</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminCouponsController.DeleteCoupon(System.Int32)">
+            <summary>
+            Bir kuponu siler.
+            </summary>
+            <param name="couponId">Silinecek kupon Id değeri</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminProductsController.Add(Entities.Models.Requests.ProductRequest)">
+            <summary>
+            Yeni bir ürün ekler.
+            </summary>
+            <remarks>
+            { "name": "Product 5", "description": "Description of Product 5", "categoryId": 1, "price": 45, "stock": 500, "maxPoint": 20, "pointPercentage": 15 }
+            </remarks>
+            <param name="productRequest">Ürün ekleme modeli</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminProductsController.Update(Entities.Models.Requests.ProductRequest,System.Int32)">
+            <summary>
+            Ürün bilgilerini günceller.
+            </summary>
+            <remarks>
+            { "name": "Product 5", "description": "Description of Product 5", "categoryId": 1, "price": 45, "stock": 500, "maxPoint": 20, "pointPercentage": 15 } /productId = 5
+            </remarks>
+            <param name="productRequest">Güncellenmek istenen ürün modeli</param>
+            <param name="productId">Güncellenmek istenen ürün Id değeri </param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminProductsController.DecreaseStock(System.Int32,System.Int32)">
+            <summary>
+            Ürünün stok miktarını azaltır.
+            </summary>
+            <param name="id"></param>
+            <param name="quantity"></param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminProductsController.IncreaseStock(System.Int32,System.Int32)">
+            <summary>
+            Ürünün stok miktarını artırır.
+            </summary>
+            <param name="id"></param>
+            <param name="quantity"></param>
+        </member>
+        <member name="M:WebAPI.Controllers.AdminProductsController.Delete(System.Int32)">
+            <summary>
+            Bir ürünü siler.
+            </summary>
+            <param name="productId"></param>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Login(Entities.Models.Requests.UserLoginRequest)">
+            <summary>
+            Müşteri girişi yapılır
+            </summary>
+            <param name="uerLoginRequest">Giriş isteği bilgileri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Register(Entities.Models.Requests.UserRegisterRequest)">
+            <summary>
+            Müşteri kaydı yapılır.
+            </summary>
+            <param name="userRegisterRequest">Kayıt isteği bilgileri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.AuthController.Update(Entities.Models.Requests.UserRegisterRequest)">
+            <summary>
+            Müşteri bilgilerini günceller.
+            </summary>
+            <param name="userRegisterRequest">Güncelleme isteği bilgileri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.CartController.AddToCart(Entities.Models.Requests.CartItemRequest)">
+            <summary>
+            Sepete ürün ekler.
+            </summary>
+            <remarks>
+            { "productId": 1, "quantity": 2 }
+            </remarks>
+            <param name="cartItemRequest">Sepete eklenecek ürün bilgileri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.CartController.GetCartDetails">
+            <summary>
+            Sepetteki ürünleri getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.CartController.DecrementQuantityInCart(Entities.Models.Requests.CartItemRequest)">
+            <summary>
+            Sepetteki ürünün miktarını azaltır.
+            </summary>
+            <remarks>
+            { "productId": 1, "quantity": 2 }
+            </remarks>
+            <param name="cartItemRequest">Sepetten azaltılacak ürün bilgileri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.CartController.RemoveProductFromCart(System.Int32)">
+            <summary>
+            Sepetteki istenen ürünü çıkarır.
+            </summary>
+            <param name="productId">Çıkarılacak ürünün Id değeri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.CartController.RemoveAllFromCart">
+            <summary>
+            Sepetteki tüm ürünleri çıkarır.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.CartOrderController.PlaceCartOrder(System.String)">
+            <summary>
+            Sepette bulunan ürünlerin siparişini verir. (Kullanıcının sanal cüzdanından ödeme yapılmaktadır. Eğer sanal cüzdanda para yoksa ""add-money-towallet" isteği ile para yüklenmesi gerekmektedir.)
+            </summary>
+            <param name="couponCode"></param>
+        </member>
+        <member name="M:WebAPI.Controllers.CartOrderController.GetOrderDetails">
+            <summary>
+            Sipariş geçmişini ve detaylarını getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.CategoriesController.GetAll">
+            <summary>
+            Tüm kategorileri getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.CategoriesController.GetAllWithInclude">
+            <summary>
+            Ürünleriyle birlikte tüm kategorileri getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.ProductsController.GetAll">
+            <summary>
+            Tüm ürünleri getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.ProductsController.GetProductsByCategoryId(System.Int32)">
+            <summary>
+            Belirli bir kategoriye ait ürünleri getirir.
+            </summary>
+            <param name="id">İstenen kategori Id değeri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.ProductsController.GetById(System.Int32)">
+            <summary>
+            Belirli bir ürünü Id'ye göre getirir.
+            </summary>
+            <param name="id">Ürün Id değeri</param>
+        </member>
+        <member name="M:WebAPI.Controllers.ProductsController.GetProductsInStock">
+            <summary>
+            Stokta bulunnan ürünleri getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.ProductsController.GetProductsAbovePrice(System.Decimal)">
+            <summary>
+            Belirli bir fiyatın üstündeki ürünleri getirir.
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.WalletController.AddMoneyToWallet(Entities.Models.Requests.CreditCardInfoRequest,System.Decimal)">
+            <summary>
+            Sanal cüzdana para ekleme işlemi yapar. (Kart Numarası 16 haneli, ay 2 haneli ve yıl 4 haneli olmak zorundadır)
+            </summary>
+            <remarks>
+            Example Value: { "cardNumber": "1234567890123456", "cardHolderName": "Bekir Kamacı", "expirationMonth": "04", "expirationYear": "2024", "cvv": "122" }
+            </remarks>
+            <param name="creditCardInfoRequest">Kredi kartı bilgileri</param>
+            <param name="amount">Eklenecek para miktarı</param>
+        </member>
+        <member name="M:WebAPI.Controllers.WalletController.GetWalletBalance">
+            <summary>
+            Cüzdan bakiyesini kontrol eder.
+            </summary>
+        </member>
+    </members>
+</doc>
