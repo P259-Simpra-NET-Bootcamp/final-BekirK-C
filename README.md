@@ -18,17 +18,17 @@ Projeyi çalıştırmak için
 `INSERT INTO OperationClaims(Name)`  
 `VALUES ('admin'), ('customer');`  
 - Aşağıdaki kod bloğunu çalıştırarak ilk kullanıcıyı admin olarak eklemiş oluyorum.  
-```UPDATE Users SET [Status] = 'Admin' WHERE Id = 1```  
-```UPDATE UserOperationClaims SET OperationClaimId = 1 WHERE Id = 1```  
+  `UPDATE Users SET [Status] = 'Admin' WHERE Id = 1`  
+  `UPDATE UserOperationClaims SET OperationClaimId = 1 WHERE Id = 1`  
 - Bu şekilde ilk kullanıcı admin olarak eklenmiş olur.
 
 Veri tabanına örnek veriler eklemek için (İsteğe bağlı)
 ----------
 - Örnek ürün ve kategori verileri eklemek için önce aşağıdaki kodu çalıştırıp örnek kategori verileri eklenebilir.  
-`INSERT INTO Categories (Name, Description, CreatedAt) VALUES```  
-`('Category 1', 'Description of Category 1', GETDATE()),```  
-`('Category 2', 'Description of Category 2', GETDATE()),```  
-`('Category 3', 'Description of Category 3', GETDATE());```  
+`INSERT INTO Categories (Name, Description, CreatedAt) VALUES`  
+`('Category 1', 'Description of Category 1', GETDATE()),`  
+`('Category 2', 'Description of Category 2', GETDATE()),`  
+`('Category 3', 'Description of Category 3', GETDATE());`  
 - Kategori ekleme işleminden sonra aşağıdaki kod bloğunu çalıştırarak örnek ürün verileri eklenir. (FK çakışmasından dolayı önce kategori sonrasında ürün eklenmelidir)  
 `INSERT INTO Products ([Name], [Description], CategoryId, Price, Stock, MaxPoint, PointPercentage, CreatedAt) VALUES`  
   `('Product 1', 'Description of Product 1', 1, 10.5, 100, 10, 15, GETDATE()),`  
