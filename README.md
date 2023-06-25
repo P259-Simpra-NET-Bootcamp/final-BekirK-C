@@ -47,5 +47,16 @@ Proje Hakkında
 - Alışveriş yapmak için öncelikle ürünler sepete eklenmeli ardından sepetteki ürünlerin siparişi verilmelidir.
 - Para kullanıcının sanal cüzdanından çekilmektedir. Eğer sanal cüzdanda yeterli para yoksa sanal cüzdana para ekleme işlemi kredi kartı ile yapılmalıdır.
 
-
-
+Proje İş Akışı
+----------
+- Sistemde "admin" ve "customer" olmak üzere iki farklı kullanıcı rolü vardır. Admin kullanıcılar admin-login ile giriş yapabilir, sisteme başka bir admin kullanıcı ekleyebilir.
+- Admin role sahip kullanıcılar sistemde Ürün/kategori/müşteri/kupon ekleme/güncelleme/silme işlemlerini gerçekleştirebilmektedir.
+- Müşterile sisteme customer-register sayfasından kayıt olup customer-login sayfasından giriş yapabilmektedir.
+- Herhangi bir ürün siparişinde önce sepete ekleme işlemi gerçekleştirilir. Bu aşamada sepette düzenleme yapılabilir.
+- Eğer sanal cüzdanda yeterli para varsa satın alma işlemi için place-order isteği atılır. Bu aşamada müşteri kupon girebilir ayrıca varsa daha önce kazandığı puanlar ödeme tutarından düşürülür.
+- Eğer kupon ve önceki siparişlerden kazanılan puan parası yeterli değilse kredi kartı bilgileri ve para miktarı ile addmoney-towallet isteği atılarak sanal cüzdana para ekleme işlemi gerçekleştirilir.
+- Müşteri ürün bilgisinde bulunan miktar kadar, sanal cüzdanından ödediği net miktar üzerinden puan kazanabilir ve sonraki sipariş bu puan para olarak kullanılır.
+  
+Feedbacks
+----------
+Mail: b.b.kamac@gmail.com
