@@ -1,8 +1,8 @@
 Simpra Bootcamp Final-Project
 ----------
-- haftalık Simpra bootcamp sürecinin sonunda verilen bitirme projesidir.
+- 7 haftalık Simpra bootcamp sürecinin sonunda verilen bitirme projesidir.
 - Proje SOLID prensiplerine uygun bir şekilde hazırlanmıştır.
-- Güvenlik için JWT entegre edilmiş, Bağımlıklıkları çözmek için Autofac kullanılmış ve hatalar SeriLog ile loglanmıştır.
+- Güvenlik için JWT entegre edilmiş, bağımlıklıkları çözmek için Autofac kullanılmış ve hatalar SeriLog ile loglanmıştır.
 
 Aşağıdaki teknolojiler kullanılmıştır
 ----------
@@ -13,7 +13,7 @@ Projeyi çalıştırmak için
 - Github'dan projeyi clone'layıp bilgisayarda projeyi başlattıktan sonra ilk olarak DataAccess>Context>SimpraProjectContext içerisinde connectionString bağlantısı güncellenmelidir.
 - Migration işlemi gerçekleştirilip veri tabanı tabloları oluşturulmalıdır. (Örnek "add-migration init_mig")
 - Proje içerisinde admin/customer rolleri bulunmaktadır. Veri tabanına ilk admin kullanıcı kaydı için birkaç TSQL kodu MSSQL'de çalıştırılmalıdır.
-- Aşağıdaki kod bloğunu MSSQL’de çalıştırarak Oepration Claims tablosu oluşturulur. (id=1-”admin” id=2-”customer” olması programın düzgün çalışabilmesi önem arz etmektedir.)  
+- Aşağıdaki kod bloğunu MSSQL’de çalıştırarak OeprationClaims tablosu oluşturulur. (id=1-”admin” id=2-”customer” olması programın düzgün çalışabilmesi önem arz etmektedir)  
 `USE TestOne;`  
 `INSERT INTO OperationClaims(Name)`  
 `VALUES ('admin'), ('customer');`  
@@ -24,7 +24,7 @@ Projeyi çalıştırmak için
 
 Veri tabanına örnek veriler eklemek için (İsteğe bağlı)
 ----------
-- Örnek ürün ve kategori verileri eklemek için önce aşağıdaki kodu çalıştırıp örnek kategori verileri eklenebilir.  
+- Örnek ürün ve kategori verileri eklemek için önce aşağıdaki kodu çalıştırıp örnek kategori verileri eklenir.  
 `INSERT INTO Categories (Name, Description, CreatedAt) VALUES`  
 `('Category 1', 'Description of Category 1', GETDATE()),`  
 `('Category 2', 'Description of Category 2', GETDATE()),`  
@@ -42,7 +42,7 @@ Proje Hakkında
 ----------
 - Dokümantasyon Swagger ile gerçekleştirilmiştir. Tüm action'ların açıklaması yapılmış ve Post işlemlerinde örnek veriler eklenmiştir.
 - "Admin" ile başlayan tüm controller endpoint'leri sadece "admin" role sahip kullanıcılar tarafından istek atılabilmektedir.
-- Ürün-kategori listeleme ve customer-login harici tüm istekler Authenticate gerektirmektedir. 
+- Ürün/kategori listeleme ve admin/customer-login harici tüm istekler Authenticate gerektirmektedir. 
 - Giriş yapıldıktan sonra 30 dk'lık token süresi bulunmaktadır.
 - Alışveriş yapmak için öncelikle ürünler sepete eklenmeli ardından sepetteki ürünlerin siparişi verilmelidir.
 - Para kullanıcının sanal cüzdanından çekilmektedir. Eğer sanal cüzdanda yeterli para yoksa sanal cüzdana para ekleme işlemi kredi kartı ile yapılmalıdır.
@@ -51,11 +51,12 @@ Proje İş Akışı
 ----------
 - Sistemde "admin" ve "customer" olmak üzere iki farklı kullanıcı rolü vardır. Admin kullanıcılar admin-login ile giriş yapabilir, sisteme başka bir admin kullanıcı ekleyebilir.
 - Admin role sahip kullanıcılar sistemde Ürün/kategori/müşteri/kupon ekleme/güncelleme/silme işlemlerini gerçekleştirebilmektedir.
-- Müşterile sisteme customer-register sayfasından kayıt olup customer-login sayfasından giriş yapabilmektedir.
+- Müşteriler sisteme customer-register sayfasından kayıt olup customer-login sayfasından giriş yapabilmektedir.
 - Herhangi bir ürün siparişinde önce sepete ekleme işlemi gerçekleştirilir. Bu aşamada sepette düzenleme yapılabilir.
-- Eğer sanal cüzdanda yeterli para varsa satın alma işlemi için place-order isteği atılır. Bu aşamada müşteri kupon girebilir ayrıca varsa daha önce kazandığı puanlar ödeme tutarından düşürülür.
+- Eğer müşteri sanal cüzdanında yeterli para varsa satın alma işlemi için place-order isteği atılır. Bu aşamada müşteri kupon girebilir ayrıca varsa daha önce kazandığı puanlar ödeme tutarından düşürülür.
 - Eğer kupon ve önceki siparişlerden kazanılan puan parası yeterli değilse kredi kartı bilgileri ve para miktarı ile addmoney-towallet isteği atılarak sanal cüzdana para ekleme işlemi gerçekleştirilir.
-- Müşteri ürün bilgisinde bulunan miktar kadar, sanal cüzdanından ödediği net miktar üzerinden puan kazanabilir ve sonraki sipariş bu puan para olarak kullanılır.
+- Müşteri ürün bilgisinde bulunan miktar kadar, sanal cüzdanından ödediği net miktar üzerinden puan kazanabilir.
+- Önceki siparişte kazanılan puanlar sonraki siparişte para olarak kullanılır.
 
 İstekler ve teslim kriterleri
 ----------
