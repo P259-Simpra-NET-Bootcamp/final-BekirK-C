@@ -24,19 +24,19 @@ Projeyi çalıştırmak için
 
 Veri tabanına örnek veriler eklemek için (İsteğe bağlı)
 ----------
-- Örnek ürün ve kategori verileri eklemek için önce aşağıdaki kodu çalıştırıp örnek kategori verileri eklenebilir.
-```INSERT INTO Categories (Name, Description, CreatedAt) VALUES```
-```('Category 1', 'Description of Category 1', GETDATE()),```
-```('Category 2', 'Description of Category 2', GETDATE()),```
-```('Category 3', 'Description of Category 3', GETDATE());```
-- Kategori ekleme işleminden sonra aşağıdaki kod bloğunu çalıştırarak örnek ürün verileri eklenir. (FK çakışmasından dolayı önce kategori sonrasında ürün eklenmelidir)
-```INSERT INTO Products ([Name], [Description], CategoryId, Price, Stock, MaxPoint, PointPercentage, CreatedAt) VALUES```
-```('Product 1', 'Description of Product 1', 1, 10.5, 100, 10, 15, GETDATE()),```
-```('Product 2', 'Description of Product 2', 1, 15, 500, 5, 10, GETDATE()),```
-```('Product 3', 'Description of Product 3', 2, 7.8, 200, 15, 20, GETDATE()),```
-```('Product 4', 'Description of Product 4', 2, 30, 150, 10, 15, GETDATE()),```
-```('Product 5', 'Description of Product 3', 3, 21, 80, 15, 30, GETDATE()),```
-```('Product 6', 'Description of Product 4', 3, 9, 340, 12, 25, GETDATE())```
+- Örnek ürün ve kategori verileri eklemek için önce aşağıdaki kodu çalıştırıp örnek kategori verileri eklenebilir.  
+`INSERT INTO Categories (Name, Description, CreatedAt) VALUES```  
+`('Category 1', 'Description of Category 1', GETDATE()),```  
+`('Category 2', 'Description of Category 2', GETDATE()),```  
+`('Category 3', 'Description of Category 3', GETDATE());```  
+- Kategori ekleme işleminden sonra aşağıdaki kod bloğunu çalıştırarak örnek ürün verileri eklenir. (FK çakışmasından dolayı önce kategori sonrasında ürün eklenmelidir)  
+`INSERT INTO Products ([Name], [Description], CategoryId, Price, Stock, MaxPoint, PointPercentage, CreatedAt) VALUES`  
+  `('Product 1', 'Description of Product 1', 1, 10.5, 100, 10, 15, GETDATE()),`  
+  `('Product 2', 'Description of Product 2', 1, 15, 500, 5, 10, GETDATE()),`  
+  `('Product 3', 'Description of Product 3', 2, 7.8, 200, 15, 20, GETDATE()),`  
+  `('Product 4', 'Description of Product 4', 2, 30, 150, 10, 15, GETDATE()),`  
+  `('Product 5', 'Description of Product 3', 3, 21, 80, 15, 30, GETDATE()),`  
+  `('Product 6', 'Description of Product 4', 3, 9, 340, 12, 25, GETDATE())`  
 
 Proje Hakkında
 ----------
