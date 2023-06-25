@@ -57,6 +57,6 @@ Proje İş Akışı
 - Eğer kupon ve önceki siparişlerden kazanılan puan parası yeterli değilse kredi kartı bilgileri ve para miktarı ile addmoney-towallet isteği atılarak sanal cüzdana para ekleme işlemi gerçekleştirilir.
 - Müşteri ürün bilgisinde bulunan miktar kadar, sanal cüzdanından ödediği net miktar üzerinden puan kazanabilir ve sonraki sipariş bu puan para olarak kullanılır.
   
-Feedbacks
+İletişim
 ----------
 Mail: b.b.kamac@gmail.com
