@@ -10,3 +10,15 @@ C:\Users\Bekir\Desktop\CSharp\27. Simpra Final Project\Simpra_Final_Project\Base
 C:\Users\Bekir\Desktop\CSharp\27. Simpra Final Project\Simpra_Final_Project\Base\obj\Debug\net6.0\refint\Base.dll
 C:\Users\Bekir\Desktop\CSharp\27. Simpra Final Project\Simpra_Final_Project\Base\obj\Debug\net6.0\Base.pdb
 C:\Users\Bekir\Desktop\CSharp\27. Simpra Final Project\Simpra_Final_Project\Base\obj\Debug\net6.0\ref\Base.dll
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\bin\Debug\net6.0\Base.deps.json
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\bin\Debug\net6.0\Base.dll
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\bin\Debug\net6.0\Base.pdb
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.csproj.AssemblyReference.cache
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.AssemblyInfoInputs.cache
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.AssemblyInfo.cs
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.csproj.CoreCompileInputs.cache
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.dll
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\refint\Base.dll
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\Base.pdb
+C:\Users\Bekir\Desktop\Final Project\final-BekirK-C\Base\obj\Debug\net6.0\ref\Base.dll

@@ -3,27 +3,15 @@ using Base.Entities.Configurations;
 using Entities.Concrete;
 using Entities.Configurations;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace DataAccess.Context;
 
 public class SimpraProjectContext : DbContext
 {
-    //private readonly IConfiguration _configuration;
-
-    //public SimpraProjectContext(IConfiguration configuration)
-    //{
-    //    _configuration = configuration;
-    //}
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(@"Server=DESKTOP-MP6HDBU; Database=TestOne; Trusted_Connection=true; TrustServerCertificate=True");
     }
-    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //{
-    //    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
-    //}
 
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }

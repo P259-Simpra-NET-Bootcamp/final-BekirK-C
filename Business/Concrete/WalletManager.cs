@@ -6,7 +6,6 @@ using Entities.Models.Requests;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
 
 namespace Business.Concrete;
 

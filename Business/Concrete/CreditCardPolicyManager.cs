@@ -7,8 +7,7 @@ public class CreditCardPolicyManager : ICreditCardPolicyService
 {
     public bool ValidateCreditCardInfo(CreditCardInfoRequest creditCardInfo)
     {
-        // Gerçek bir projede Kredi Kartı için yapılması gereken implementasyonlar yetkili makamlardan izim
-        // alınarak gerçekleşmektedir. Bu bir eğitim projesi olduğundan policy'de return true kullanılmıştır.
+        // Bu bir eğitim projesi olduğundan CreditCardPolicyManager'da return true kullanılmıştır.
         return true;
     }
 }

@@ -21,16 +21,9 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddMapperExtension();    // Automapper Implementation
-        builder.Host.AddAutofacExtension();       // Autofac Implementation
+        builder.Services.AddMapperExtension();        // Automapper Implementation
+        builder.Host.AddAutofacExtension();           // Autofac Implementation
         builder.Services.AddCustomSwaggerExtension(); // CustomSwagger Implementation
-
-
-
-        //builder.Services.AddDbContext<SimpraProjectContext>(options =>
-        //{
-        //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-        //});
 
         var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
