@@ -1,4 +1,4 @@
-<h3>Simpra Bootcamp Final-Project</h3>
+Simpra Bootcamp Final-Project
 ----------
 - haftalık Simpra bootcamp sürecinin sonunda verilen bitirme projesidir.
 - Proje SOLID prensiplerine uygun bir şekilde hazırlanmıştır.
@@ -14,9 +14,9 @@
 - Migration işlemi gerçekleştirilip veri tabanı tabloları oluşturulmalıdır. (Örnek "add-migration init_mig")
 - Proje içerisinde admin/customer rolleri bulunmaktadır. Veri tabanına ilk admin kullanıcı kaydı için birkaç TSQL kodu MSSQL'de çalıştırılmalıdır.
 - Aşağıdaki kod bloğunu MSSQL’de çalıştırarak Oepration Claims tablosu oluşturulur. (id=1-”admin” id=2-”customer” olması programın düzgün çalışabilmesi önem arz etmektedir.)
-```USE TestOne;```
-```INSERT INTO OperationClaims(Name)```
-```VALUES ('admin'), ('customer');```
+```USE TestOne;
+INSERT INTO OperationClaims(Name)
+VALUES ('admin'), ('customer');```
 - Aşağıdaki kod bloğunu çalıştırarak ilk kullanıcıyı admin olarak eklemiş oluyorum.
 ```UPDATE Users SET [Status] = 'Admin' WHERE Id = 1```
 ```UPDATE UserOperationClaims SET OperationClaimId = 1 WHERE Id = 1```
